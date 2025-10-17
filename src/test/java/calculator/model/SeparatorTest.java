@@ -16,4 +16,12 @@ public class SeparatorTest {
         assertEquals(List.of(1, 2, 3), numbers);
     }
 
+    @Test
+    @DisplayName("입력받은 문자열 커스텀 구분자로 숫자만 구분하기")
+    void testCustomSeparator() {
+        CustomSeparator customSeparator = new CustomSeparator();
+        List<Integer> numbers = customSeparator.extractNumbers("//*\n1*2*3");
+        assertEquals(List.of(1, 2, 3), numbers);
+    }
+
 }

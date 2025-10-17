@@ -11,7 +11,7 @@ public class Separator {
     public List<Integer> extractNumbers(String inputValue) {
 
         String[] numbers = inputValue.split(DEAULT_SAPARATOR);
-
+        
         List<Integer> result = Arrays.stream(numbers)
                 .map(String::trim)
                 .map(Integer::parseInt)
