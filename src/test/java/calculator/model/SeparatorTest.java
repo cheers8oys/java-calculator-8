@@ -22,6 +22,6 @@ public class SeparatorTest {
         CustomSeparator customSeparator = new CustomSeparator();
         List<Integer> numbers = customSeparator.extractNumbers("//*\n1*2*3");
         assertEquals(List.of(1, 2, 3), numbers);
-    }
 
+    }
 }
