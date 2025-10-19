@@ -20,7 +20,7 @@ public class CustomSeparator implements NumberExtractor {
 
         List<Integer> result = Arrays.stream(numbers)
                 .map(String::trim)
-                .map(Integer::parseInt)
+                .map(NumberValidator::validateNumber)
                 .collect(Collectors.toList());
         return result;
 

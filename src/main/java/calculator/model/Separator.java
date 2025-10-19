@@ -19,7 +19,7 @@ public class Separator implements NumberExtractor {
         String[] numbers = inputValue.split(DEAULT_SAPARATOR);
         List<Integer> result = Arrays.stream(numbers)
                 .map(String::trim)
-                .map(Integer::parseInt)
+                .map(NumberValidator::validateNumber)
                 .collect(Collectors.toList());
         return result;
 
