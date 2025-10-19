@@ -9,13 +9,14 @@ public class CustomSeparator implements NumberExtractor {
     @Override
     public List<Integer> extractNumbers(String inputValue) {
 
-        int separatorIndex = inputValue.indexOf("\\n");
+        inputValue = inputValue.replace("\\n", "\n");
+        int separatorIndex = inputValue.indexOf("\n");
         if (separatorIndex == -1) {
             throw new IllegalArgumentException("잘못된 입력 형식입니다.");
         }
 
         String customSeparator = inputValue.substring(2, separatorIndex);
-        String numbersPart = inputValue.substring(separatorIndex + 2);
+        String numbersPart = inputValue.substring(separatorIndex + 1);
         String[] numbers = numbersPart.split(java.util.regex.Pattern.quote(customSeparator));
 
         List<Integer> result = Arrays.stream(numbers)
